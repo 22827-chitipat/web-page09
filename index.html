@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitipat Kongjan | Cyber-Sports Student Portfolio (Man Utd 2008 Theme)</title>
+    <meta name="description" content="พอร์ตโฟลิโอนักเรียนของ ชิติพัทธ์ คงจันทร์ (ยูโร) ศิษย์เก่าโรงเรียนอนุบาลเชียงใหม่ ปัจจุบัน ม.3/2 โรงเรียนจอมทอง จังหวัดเชียงใหม่">
+    <meta property="og:title" content="พอร์ตโฟลิโอ ชิติพัทธ์ คงจันทร์ (ยูโร)">
+    <meta property="og:description" content="ศิษย์เก่าโรงเรียนอนุบาลเชียงใหม่ (ป.1-ป.6) • ม.3/2 โรงเรียนจอมทอง • Man Utd 2008 Theme">
+    <meta property="og:image" content="758408997_1496012535545849_5696015498214128430_n.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Kanit & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonred: '#FF2A3B',
+                        neonredglow: 'rgba(255, 42, 59, 0.4)',
+                        neongold: '#FFC72C',
+                        cyberdark: '#080C14',
+                        cardbg: 'rgba(15, 22, 36, 0.85)',
+                        borderglow: 'rgba(255, 255, 255, 0.12)',
+                    },
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #1f293d; border-radius: 99px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF2A3B; }
+
+        body {
+            background-color: #080C14;
+            color: #F1F5F9;
+            font-family: 'Kanit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(15, 22, 36, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-panel-hover:hover {
+            transform: translateY(-5px) scale(1.01);
+            border-color: rgba(255, 42, 59, 0.5);
+            box-shadow: 0 15px 35px -5px rgba(255, 42, 59, 0.25);
+        }
+
+        .gradient-text-red {
+            background: linear-gradient(135deg, #FF5252 0%, #FF2A3B 50%, #FFC72C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(135deg, #FFE082 0%, #FFC72C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .avatar-glow {
+            position: relative;
+        }
+        .avatar-glow::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(45deg, #FF2A3B, #FFC72C, #00E5FF, #FF2A3B);
+            background-size: 300% 300%;
+            border-radius: 9999px;
+            z-index: -1;
+            filter: blur(12px);
+            animation: glowRotate 8s linear infinite;
+        }
+
+        @keyframes glowRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .nav-item {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #FF2A3B, #FFC72C);
+            border-radius: 99px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-item:hover::after, .nav-item.active::after {
+            width: 100%;
+        }
+        .nav-item.active {
+            color: #FF2A3B;
+            font-weight: 600;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Center Zoom Opening Animation */
+        #intro-screen {
+            transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.9s ease-in-out;
+            transform-origin: center center;
+        }
+        
+        #intro-screen.zoom-portal {
+            transform: scale(15);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative selection:bg-neonred selection:text-white">
+
+    <div id="intro-screen" class="fixed inset-0 z-[100] bg-cyberdark flex flex-col items-center justify-center p-4 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 scale-105 animate-pulse" style="animation-duration: 8s; background-image: url('Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-cyberdark via-cyberdark/80 to-red-950/50 pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#FF2A3B_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+
+        <div class="absolute top-10 left-10 w-96 h-96 bg-neonred/25 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-neongold/20 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-4xl w-full text-center space-y-8 relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neonred/20 text-neonred font-mono text-xs font-bold border border-neonred/40 tracking-widest uppercase animate-pulse">
+                <i class="fa-solid fa-trophy text-neongold"></i> THE UNDEFEATED • MAN UTD 2008 LEGENDS SQUAD 😈
+            </div>
+
+            <div class="space-y-3">
+                <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight drop-shadow-lg">
+                    ยินดีต้อนรับสู่พอร์ตโฟลิโอ <span class="gradient-text-red">ชิติพัทธ์ คงจันทร์ (ยูโร)</span>
+                </h1>
+                <p class="text-gray-200 text-sm sm:text-base drop-shadow max-w-2xl mx-auto">
+                    ศิษย์เก่าโรงเรียนอนุบาลเชียงใหม่ (ป.1-ป.6) และปัจจุบัน ม.3/2 โรงเรียนจอมทอง • ขุนพลแมนยู 2008
+                </p>
+            </div>
+
+            <div class="pt-2">
+                <button onclick="triggerCenterZoom()" class="px-10 py-5 rounded-2xl bg-gradient-to-r from-neonred via-red-600 to-red-700 text-white font-extrabold text-lg shadow-2xl shadow-neonred/60 hover:shadow-neonred hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 mx-auto group border border-neonred/50">
+                    <i class="fa-solid fa-futbol text-2xl text-neongold animate-spin" style="animation-duration: 4s;"></i>
+                    <span>คลิกเพื่อซูมเข้าสู่เว็บไซต์พอร์ตโฟลิโอ (Enter Portfolio)</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </button>
+            </div>
+
+            <div class="text-xs text-gray-400 font-mono">
+                💡 เอฟเฟกต์เสียงและพาร์ติเคิลจะเริ่มต้นทันทีเมื่อเข้าสู่หน้าหลัก
+            </div>
+        </div>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="fixed top-10 left-10 w-96 h-96 bg-neonred/15 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-10 right-10 w-96 h-96 bg-neongold/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-cyberdark/80 border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" onclick="showSection('home')" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-neonred via-red-600 to-neongold p-0.5 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full bg-cyberdark rounded-[14px] flex items-center justify-center text-white font-black text-xl">
+                            <i class="fa-solid fa-shield-halved text-neonred group-hover:text-neongold transition-colors"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg tracking-wider text-white group-hover:text-neonred transition-colors flex items-center gap-1.5">
+                            CHITIPAT <span class="text-xs px-2 py-0.5 rounded-md bg-neonred/20 text-neonred font-mono border border-neonred/30">M.3/2</span>
+                        </span>
+                        <span class="text-[11px] text-gray-400 font-mono tracking-widest uppercase -mt-0.5">Euro • Anuban Chiang Mai Alum</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" onclick="showSection('home')" id="nav-home" class="nav-item active text-gray-200 hover:text-white py-1">หน้าแรก</a>
+                    <a href="#profile" onclick="showSection('profile')" id="nav-profile" class="nav-item text-gray-300 hover:text-white py-1">ประวัติส่วนตัว</a>
+                    <a href="#education" onclick="showSection('education')" id="nav-education" class="nav-item text-gray-300 hover:text-white py-1">การศึกษา (ประถม-มัธยม)</a>
+                    <a href="#hobby" onclick="showSection('hobby')" id="nav-hobby" class="nav-item text-gray-300 hover:text-white py-1">งานอดิเรก & แมนยู</a>
+                    <a href="#challenge" onclick="showSection('challenge')" id="nav-challenge" class="nav-item text-gray-300 hover:text-white py-1 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gamepad text-neongold text-xs"></i>
+                        <span>มินิเกม & จุดโทษ</span>
+                    </a>
+                    <a href="#contact" onclick="showSection('contact')" id="nav-contact" class="nav-item text-gray-300 hover:text-white py-1">ติดต่อ</a>
+                </nav>
+
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button id="sound-btn" onclick="toggleSound()" class="px-3 py-1.5 rounded-xl glass-panel text-xs text-gray-300 hover:text-white hover:border-neonred/50 transition-all flex items-center gap-2" title="เปิด/ปิด เสียงเอฟเฟกต์">
+                        <i class="fa-solid fa-volume-high text-neonred" id="sound-icon"></i>
+                        <span id="sound-text" class="font-mono text-[11px]">AUDIO ON</span>
+                    </button>
+
+                    <div class="flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neongold/10 border border-neongold/30 text-xs text-amber-300 font-mono shadow-inner">
+                        <i class="fa-solid fa-eye text-neongold"></i>
+                        <span id="visitor-count">ผู้ชม: 1,842</span>
+                    </div>
+
+                    <div class="flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neonred/10 border border-neonred/30 text-xs text-red-300 font-mono shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-neonred animate-ping"></span>
+                        <span>RED DEVIL SPIRIT 😈</span>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="sound-btn-mobile" onclick="toggleSound()" class="p-2.5 rounded-xl glass-panel text-gray-300">
+                        <i class="fa-solid fa-volume-high text-neonred" id="sound-icon-mobile"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="p-2.5 rounded-xl glass-panel text-gray-200 hover:text-white border border-white/10 focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-cyberdark/95 border-b border-white/10 px-4 pt-3 pb-5 space-y-2 text-sm font-medium transition-all">
+            <a href="#home" onclick="showSection('home'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
+                <i class="fa-solid fa-house text-neonred"></i> <span>หน้าแรก</span>
+            </a>
+            <a href="#profile" onclick="showSection('profile'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
+                <i class="fa-solid fa-id-card text-neonred"></i> <span>ประวัติส่วนตัว</span>
+            </a>
+            <a href="#education" onclick="showSection('education'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
+                <i class="fa-solid fa-graduation-cap text-neonred"></i> <span>การศึกษา (ประถม-มัธยม)</span>
+            </a>
+            <a href="#hobby" onclick="showSection('hobby'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
+                <i class="fa-solid fa-laptop-code text-neonred"></i> <span>งานอดิเรก & แมนยู</span>
+            </a>
+            <a href="#challenge" onclick="showSection('challenge'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
+                <i class="fa-solid fa-gamepad text-neongold"></i> <span>มินิเกม & จุดโทษ</span>
+            </a>
+            <a href="#contact" onclick="showSection('contact'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
+                <i class="fa-solid fa-paper-plane text-neonred"></i> <span>ติดต่อ</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 z-10 flex-grow w-full">
+
+        <!-- SECTION 1: HOME / HERO -->
+        <section id="section-home" class="page-section">
+            <div class="relative rounded-3xl overflow-hidden p-6 sm:p-10 mb-8 border border-white/15 shadow-2xl">
+                <div class="absolute inset-0 bg-cover bg-center opacity-30 filter brightness-90" style="background-image: url('Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe');"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-cyberdark via-cyberdark/90 to-cyberdark/70"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10 py-4 lg:py-6">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border-neonred/30 text-xs sm:text-sm text-gray-300 shadow-lg">
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonred opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-neonred"></span>
+                            </span>
+                            <span class="font-mono text-white tracking-wide">STUDENT PORTFOLIO 2026</span>
+                            <span class="text-gray-500">•</span>
+                            <span class="text-neongold font-medium">อนุบาลเชียงใหม่สู่จอมทอง</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none text-white drop-shadow-md">
+                                สวัสดีครับ, ผม <br>
+                                <span class="gradient-text-red">ชิติพัทธ์ คงจันทร์</span>
+                            </h1>
+                            <p class="text-xl sm:text-2xl text-gray-200 font-light flex items-center justify-center lg:justify-start gap-2">
+                                ชื่อเล่น <span class="gradient-text-gold font-bold">"ยูโร"</span> 
+                                <span class="text-gray-400">|</span> 
+                                <span class="text-sm font-mono bg-white/10 px-3 py-1 rounded-lg border border-white/20 text-gray-200">#EuroChitipat</span>
+                            </p>
+                        </div>
+
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            ศิษย์เก่าโรงเรียนอนุบาลเชียงใหม่ (ป.1-ป.6) และปัจจุบันศึกษาอยู่ ม.3/2 โรงเรียนจอมทอง เชียงใหม่ หลงใหลในการพัฒนาเว็บไซต์ คณิตศาสตร์ และสาวกปีศาจแดง <span class="text-neonred font-semibold">แมนเชสเตอร์ ยูไนเต็ด 2008 😈</span>
+                        </p>
+
+                        <div class="glass-panel p-3.5 rounded-2xl border-l-4 border-l-neongold flex items-center gap-3.5 max-w-xl mx-auto lg:mx-0 text-left bg-black/60">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonred to-neongold flex items-center justify-center font-extrabold text-black font-mono shrink-0 shadow-lg">
+                                CR7
+                            </div>
+                            <div class="text-xs">
+                                <span class="text-neongold font-bold tracking-wider font-mono uppercase block">MY HERO INSPIRATION: RONALDO 2008 🏆</span>
+                                <span class="text-gray-200">"42 ประตูในฤดูกาล 2007-08 + Ballon d'Or + UCL Champion"</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <button onclick="showSection('education')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-neonred via-red-600 to-red-700 text-white font-bold shadow-lg shadow-neonred/30 hover:shadow-neonred/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group">
+                                <i class="fa-solid fa-graduation-cap group-hover:rotate-12 transition-transform"></i>
+                                <span>ดูประวัติการศึกษา ป.1-ป.6 & ม.3</span>
+                            </button>
+                            
+                            <button onclick="showSection('challenge')" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-panel text-gray-200 hover:text-white hover:border-neongold/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group">
+                                <i class="fa-solid fa-dice text-neongold group-hover:spin transition-transform"></i>
+                                <span>มินิเกม & ยิงจุดโทษ</span>
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                            <div class="glass-panel p-4 rounded-2xl text-center glass-panel-hover">
+                                <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">ม.3/2</div>
+                                <div class="text-xs text-gray-400 mt-0.5">ห้องเรียนปัจจุบัน</div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-2xl text-center glass-panel-hover">
+                                <div class="text-2xl sm:text-3xl font-extrabold text-neonred font-mono">14 ปี</div>
+                                <div class="text-xs text-gray-400 mt-0.5">อายุ</div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-2xl text-center glass-panel-hover">
+                                <div class="text-2xl sm:text-3xl font-extrabold text-neongold font-mono">2008</div>
+                                <div class="text-xs text-gray-400 mt-0.5">Man Utd Spirit</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+                        <div class="relative group">
+                            <div class="avatar-glow"></div>
+
+                            <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-2 bg-cyberdark border-2 border-white/25 shadow-2xl flex items-center justify-center overflow-hidden">
+                                <img src="758408997_1496012535545849_5696015498214128430_n.jpg" 
+                                     alt="รูปโปรไฟล์ ยูโร ชิติพัทธ์" 
+                                     class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700">
+                                
+                                <div class="absolute bottom-6 bg-cyberdark/90 backdrop-blur-md border border-neonred/50 px-5 py-2 rounded-full text-xs font-bold text-white flex items-center gap-2 shadow-xl">
+                                    <i class="fa-solid fa-soccer-ball text-neonred animate-spin" style="animation-duration: 10s;"></i>
+                                    <span class="tracking-wide">GLORY GLORY MAN UTD</span>
+                                </div>
+                            </div>
+
+                            <div class="absolute -top-2 -left-2 glass-panel p-3 rounded-2xl flex items-center gap-2 text-xs font-bold text-neongold shadow-2xl border-neongold/30 hover:scale-110 transition-transform cursor-pointer" onclick="triggerConfetti()">
+                                <i class="fa-solid fa-crown text-lg"></i>
+                                <span>อนุบาลเชียงใหม่ & จอมทอง</span>
+                            </div>
+
+                            <div class="absolute top-1/2 -right-4 glass-panel p-3 rounded-2xl flex items-center gap-2 text-xs font-bold text-neonred shadow-2xl border-neonred/30 hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-code text-lg"></i>
+                                <span>HTML / CSS / JS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PROFILE & SKILLS -->
+        <section id="section-profile" class="page-section hidden">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono text-neonred uppercase tracking-widest bg-neonred/10 px-3 py-1 rounded-full border border-neonred/20">
+                    <i class="fa-solid fa-id-card"></i> Personal Bio
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">ประวัติส่วนตัว & ตัวตนของยูโร</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-neonred to-neongold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl text-center space-y-6 relative overflow-hidden border-t-4 border-t-neonred">
+                    <div class="relative w-44 h-44 mx-auto rounded-full p-1.5 border-2 border-neonred/50 shadow-2xl overflow-hidden group">
+                        <img src="758408997_1496012535545849_5696015498214128430_n.jpg" alt="ชิติพัทธ์" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500">
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-black text-white">นายชิติพัทธ์ คงจันทร์</h3>
+                        <p class="text-neonred font-bold text-base mt-1">ชื่อเล่น: ยูโร (Euro)</p>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">ANUBAN CHIANG MAI ALUM • M.3/2 JOMTHONG</p>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-5 text-left space-y-3.5 text-sm">
+                        <div class="flex items-center justify-between text-gray-300 glass-panel p-2.5 rounded-xl">
+                            <span class="text-gray-400 flex items-center gap-2"><i class="fa-solid fa-cake-candles text-neonred"></i> วันเกิด:</span>
+                            <span class="font-bold text-white font-mono">21 กุมภาพันธ์ 2555</span>
+                        </div>
+                        <div class="flex items-center justify-between text-gray-300 glass-panel p-2.5 rounded-xl">
+                            <span class="text-gray-400 flex items-center gap-2"><i class="fa-solid fa-hourglass-half text-neongold"></i> อายุ:</span>
+                            <span class="font-bold text-white font-mono">14 ปี</span>
+                        </div>
+                        <div class="flex items-center justify-between text-gray-300 glass-panel p-2.5 rounded-xl">
+                            <span class="text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-cyan-400"></i> จังหวัด:</span>
+                            <span class="font-bold text-white">เชียงใหม่ (Chiang Mai)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl space-y-4">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-quote-left text-neonred text-2xl"></i>
+                            <span>เกี่ยวกับตัวผม (About Me)</span>
+                        </h3>
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            สวัสดีครับ! ผม <strong class="text-white">ชิติพัทธ์ คงจันทร์ (ยูโร)</strong> จบการศึกษาระดับประถมศึกษาจาก <strong class="text-neongold">โรงเรียนอนุบาลเชียงใหม่</strong> (ป.1-ป.6) และปัจจุบันศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 3/2 <strong class="text-neonred">โรงเรียนจอมทอง</strong> จังหวัดเชียงใหม่ ชื่นชอบการเขียนโค้ดเว็บไซต์ คณิตศาสตร์ และเชียร์สโมสรแมนยู 2008
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl space-y-5">
+                        <h3 class="text-lg font-bold text-white flex items-center justify-between">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-sliders text-neongold"></i> ทักษะและความถนัด (Skill Progress)</span>
+                            <span class="text-xs font-mono text-gray-400">SELF ASSESSMENT</span>
+                        </h3>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-medium">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-calculator text-neongold"></i> คณิตศาสตร์ & การคำนวณ</span>
+                                <span class="text-neongold font-mono">92%</span>
+                            </div>
+                            <div class="w-full bg-white/5 h-2.5 rounded-full overflow-hidden p-0.5 border border-white/10">
+                                <div class="bg-gradient-to-r from-amber-500 to-neongold h-full rounded-full" style="width: 92%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-medium">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-code text-neonred"></i> การพัฒนาเว็บ (HTML5 / Tailwind CSS)</span>
+                                <span class="text-neonred font-mono">85%</span>
+                            </div>
+                            <div class="w-full bg-white/5 h-2.5 rounded-full overflow-hidden p-0.5 border border-white/10">
+                                <div class="bg-gradient-to-r from-red-600 to-neonred h-full rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-medium">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-futbol text-emerald-400"></i> แท็กติกฟุตบอล & แมนยู 2008</span>
+                                <span class="text-emerald-400 font-mono">98%</span>
+                            </div>
+                            <div class="w-full bg-white/5 h-2.5 rounded-full overflow-hidden p-0.5 border border-white/10">
+                                <div class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: EDUCATION (PRIMARY AT ANUBAN CHIANG MAI & JOMTHONG) -->
+        <section id="section-education" class="page-section hidden">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono text-neongold uppercase tracking-widest bg-neongold/10 px-3 py-1 rounded-full border border-neongold/20">
+                    <i class="fa-solid fa-graduation-cap"></i> Academic Timeline
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">ประวัติการศึกษา (อนุบาลเชียงใหม่ & จอมทอง)</h2>
+                <p class="text-gray-400 text-sm">เจาะลึกเส้นทางการศึกษาตั้งแต่ระดับชั้น ป.1 ถึง ป.6 ที่โรงเรียนอนุบาลเชียงใหม่ และระดับ ม.ต้น ที่โรงเรียนจอมทอง</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-neongold to-neonred mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="relative border-l-2 border-neonred/40 ml-4 sm:ml-32 pl-6 sm:pl-10 space-y-10">
+                    
+                    <!-- High School M.3 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-7 h-7 rounded-full bg-neonred border-4 border-cyberdark flex items-center justify-center text-white text-xs shadow-lg shadow-neonred/50">
+                            <i class="fa-solid fa-check text-[10px]"></i>
+                        </div>
+                        <div class="hidden sm:block absolute -left-36 top-1 text-right w-24 font-mono text-sm font-bold text-neonred">2023 - PRESENT</div>
+
+                        <div class="glass-panel p-6 sm:p-8 rounded-3xl glass-panel-hover border-l-4 border-l-neonred space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white">มัธยมศึกษาตอนต้น (ม.3/2)</h3>
+                                <span class="px-3 py-1 rounded-full bg-neonred/20 text-neonred border border-neonred/30 text-xs font-mono font-bold">ปัจจุบัน</span>
+                            </div>
+                            <p class="text-neongold font-semibold text-sm">🏫 โรงเรียนจอมทอง จังหวัดเชียงใหม่</p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                ศึกษาต่อในระดับมัธยมศึกษาตอนต้น ณ โรงเรียนจอมทอง มุ่งเน้นการพัฒนาทักษะคอมพิวเตอร์ การเขียนโปรแกรมเว็บไซต์ และการคิดคำนวณขั้นสูง
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Primary School Grades 1-6 (Anuban Chiang Mai) -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-7 h-7 rounded-full bg-amber-500 border-4 border-cyberdark flex items-center justify-center text-black font-black text-xs shadow-lg">
+                            <i class="fa-solid fa-star text-[10px]"></i>
+                        </div>
+                        <div class="hidden sm:block absolute -left-36 top-1 text-right w-24 font-mono text-sm font-bold text-amber-400">2017 - 2023</div>
+
+                        <div class="glass-panel p-6 sm:p-8 rounded-3xl glass-panel-hover border-l-4 border-l-amber-400 space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white">ประถมศึกษาปีที่ 1 ถึง ปีที่ 6 (ป.1 - ป.6)</h3>
+                                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono font-bold">สำเร็จการศึกษา</span>
+                            </div>
+                            <p class="text-amber-400 font-semibold text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-school-flag"></i> โรงเรียนอนุบาลเชียงใหม่ (Anuban Chiang Mai School)
+                            </p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                ผ่านช่วงวัยประถมศึกษาอันทรงคุณค่าที่โรงเรียนอนุบาลเชียงใหม่ ซึ่งเป็นรากฐานสำคัญในการปลูกฝังวินัย ความรักในการเรียนรู้ ทักษะวิชาการรอบด้าน และพื้นฐานคณิตศาสตร์ที่ดีเยี่ยมก่อนก้าวสู่ระดับมัธยมศึกษา
+                            </p>
+
+                            <!-- Grade Details Breakdown Accordion/Grid -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                                <div class="glass-panel p-3 rounded-2xl text-center border-amber-400/30">
+                                    <span class="text-amber-400 font-bold text-xs font-mono block">ประถมศึกษาปีที่ 1-2</span>
+                                    <span class="text-[11px] text-gray-300 block mt-1">ปรับพื้นฐาน & ทักษะอ่านเขียน</span>
+                                </div>
+                                <div class="glass-panel p-3 rounded-2xl text-center border-amber-400/30">
+                                    <span class="text-amber-400 font-bold text-xs font-mono block">ประถมศึกษาปีที่ 3-4</span>
+                                    <span class="text-[11px] text-gray-300 block mt-1">คณิตศาสตร์ขั้นต้น & กิจกรรมโรงเรียน</span>
+                                </div>
+                                <div class="glass-panel p-3 rounded-2xl text-center border-amber-400/30 col-span-2 sm:col-span-1">
+                                    <span class="text-amber-400 font-bold text-xs font-mono block">ประถมศึกษาปีที่ 5-6</span>
+                                    <span class="text-[11px] text-gray-300 block mt-1">เตรียมความพร้อมสู่มัธยมต้น</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HOBBIES & MAN UTD 2008 -->
+        <section id="section-hobby" class="page-section hidden">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono text-neonred uppercase tracking-widest bg-neonred/10 px-3 py-1 rounded-full border border-neonred/20">
+                    <i class="fa-solid fa-heart"></i> Passions & Man Utd 2008
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">งานอดิเรก & ตำนานปีศาจแดง 2008</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-neonred to-neongold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+                <button onclick="filterHobbies('all')" class="hobby-tab active px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-white">ทั้งหมด</button>
+                <button onclick="filterHobbies('football')" class="hobby-tab px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400">⚽ แมนยู 2008</button>
+                <button onclick="filterHobbies('code')" class="hobby-tab px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400">💻 โค้ดดิ้ง</button>
+                <button onclick="filterHobbies('math')" class="hobby-tab px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-gray-400">📐 คณิตศาสตร์</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="hobby-card football glass-panel p-6 rounded-3xl glass-panel-hover border-t-2 border-t-neonred space-y-6 md:col-span-2 lg:col-span-3 relative overflow-hidden">
+                    <div class="absolute inset-0 z-0 opacity-15 pointer-events-none bg-cover bg-center" style="background-image: url('Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe');"></div>
+
+                    <div class="relative overflow-hidden rounded-2xl border border-neonred/30 group z-10">
+                        <img src="Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe" 
+                             alt="Manchester United Legends 2008" 
+                             class="w-full h-64 sm:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyberdark via-cyberdark/30 to-transparent flex items-end p-4 sm:p-6">
+                            <div>
+                                <span class="px-2.5 py-1 rounded bg-neonred text-white text-[10px] font-mono font-bold tracking-wider uppercase mb-1.5 inline-block shadow-md">
+                                    <i class="fa-solid fa-trophy mr-1"></i> MOSCOW 2008 UCL CHAMPIONS SQUAD
+                                </span>
+                                <h4 class="text-lg sm:text-2xl font-black text-white">"THE GLORY OF MANCHESTER UNITED 2008"</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 z-10 relative">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                            <h4 class="text-sm font-bold text-neongold uppercase font-mono tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-crown text-neonred"></i> คลิกดูข้อมูลขุนพล 2008
+                            </h4>
+                            <span class="text-[11px] text-gray-400 font-mono">Legend Roster</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-1">
+                            <div onclick="showPlayerModal('cr7')" class="glass-panel p-3 rounded-2xl text-center border-neonred/40 hover:border-neonred hover:scale-105 transition-all cursor-pointer group bg-gradient-to-b from-neonred/10 to-transparent">
+                                <div class="w-12 h-12 mx-auto rounded-full bg-gradient-to-tr from-neonred to-neongold p-0.5 mb-2">
+                                    <div class="w-full h-full bg-cyberdark rounded-full flex items-center justify-center font-black font-mono text-neonred text-lg">7</div>
+                                </div>
+                                <div class="font-bold text-white text-xs">C. Ronaldo</div>
+                                <div class="text-[10px] text-neonred font-mono font-semibold">Ballon d'Or 2008</div>
+                            </div>
+
+                            <div onclick="showPlayerModal('rooney')" class="glass-panel p-3 rounded-2xl text-center hover:border-white/40 hover:scale-105 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 mx-auto rounded-full bg-white/10 p-0.5 mb-2">
+                                    <div class="w-full h-full bg-cyberdark rounded-full flex items-center justify-center font-black font-mono text-white text-lg">10</div>
+                                </div>
+                                <div class="font-bold text-white text-xs">Wayne Rooney</div>
+                                <div class="text-[10px] text-gray-300 font-mono">Striker Legend</div>
+                            </div>
+
+                            <div onclick="showPlayerModal('scholes')" class="glass-panel p-3 rounded-2xl text-center hover:border-white/40 hover:scale-105 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 mx-auto rounded-full bg-white/10 p-0.5 mb-2">
+                                    <div class="w-full h-full bg-cyberdark rounded-full flex items-center justify-center font-black font-mono text-neongold text-lg">18</div>
+                                </div>
+                                <div class="font-bold text-white text-xs">Paul Scholes</div>
+                                <div class="text-[10px] text-neongold font-mono">Midfield Maestro</div>
+                            </div>
+
+                            <div onclick="showPlayerModal('wall')" class="glass-panel p-3 rounded-2xl text-center hover:border-white/40 hover:scale-105 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 mx-auto rounded-full bg-white/10 p-0.5 mb-2">
+                                    <div class="w-full h-full bg-cyberdark rounded-full flex items-center justify-center font-black font-mono text-cyan-400 text-sm">5&15</div>
+                                </div>
+                                <div class="font-bold text-white text-xs">Rio & Vidić</div>
+                                <div class="text-[10px] text-cyan-400 font-mono">Iron Wall</div>
+                            </div>
+
+                            <div onclick="showPlayerModal('vandersar')" class="glass-panel p-3 rounded-2xl text-center hover:border-white/40 hover:scale-105 transition-all cursor-pointer group col-span-2 sm:col-span-1">
+                                <div class="w-12 h-12 mx-auto rounded-full bg-white/10 p-0.5 mb-2">
+                                    <div class="w-full h-full bg-cyberdark rounded-full flex items-center justify-center font-black font-mono text-emerald-400 text-lg">1</div>
+                                </div>
+                                <div class="font-bold text-white text-xs">Van der Sar</div>
+                                <div class="text-[10px] text-emerald-400 font-mono">Penalty Hero</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hobby-card code glass-panel p-6 rounded-3xl glass-panel-hover border-t-2 border-t-cyan-400 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-400/20 text-cyan-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">เขียนโปรแกรม HTML/CSS</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            ศึกษาสร้างเว็บไซต์เชิงโต้ตอบ สนุกกับการจัด Layout โทนสี และเขียนสคริปต์สลับหน้าเว็บ SPA
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hobby-card math glass-panel p-6 rounded-3xl glass-panel-hover border-t-2 border-t-neongold space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-neongold/20 text-neongold flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">โจทย์คณิตคิดคำนวณ</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            ฝึกแก้สมการ ตรรกะความคิดที่เป็นระบบ ช่วยพัฒนาทักษะการคำนวณตั้งแต่ประถมจนถึงมัธยม
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hobby-card football glass-panel p-6 rounded-3xl glass-panel-hover border-t-2 border-t-purple-500 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">เกมจำลองฟุตบอล & วางแผน</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            เล่นเกมฟุตบอลจัดทีมแมนยูยุคคลาสสิก ฝึกวางแท็กติกการบุกและตั้งรับ
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INTERACTIVE MINI-GAME & PENALTY SHOOTOUT -->
+        <section id="section-challenge" class="page-section hidden">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono text-neongold uppercase tracking-widest bg-neongold/10 px-3 py-1 rounded-full border border-neongold/20">
+                    <i class="fa-solid fa-gamepad"></i> Interactive Arcade Arena
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">มินิเกมคิดเลขไว & ดวลจุดโทษ 2008</h2>
+                <p class="text-gray-400 text-sm">ทดสอบสมองคณิตศาสตร์สไตล์เด็กอนุบาลเชียงใหม่ และยิงจุดโทษสไตล์ CR7 2008!</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-neongold to-neonred mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+                
+                <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-3xl space-y-6 border-t-4 border-t-neongold relative overflow-hidden">
+                    <div id="math-feedback-banner" class="absolute inset-x-0 top-0 py-2.5 px-4 text-center font-bold text-sm tracking-wider shadow-lg transform -translate-y-full transition-transform duration-300 z-20 flex items-center justify-center gap-2"></div>
+
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-calculator text-neongold"></i>
+                                <span>โจทย์คณิตสปีดควิซ (Math Speed)</span>
+                            </h3>
+                            <p class="text-xs text-gray-400">สุ่มโจทย์คณิตศาสตร์ ตอบให้ถูกต้อง!</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-gray-400 font-mono block">SCORE</span>
+                            <span id="math-score" class="text-2xl font-black font-mono text-neongold">0</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-cyberdark/80 p-6 rounded-2xl text-center border border-white/10 space-y-3">
+                        <span class="text-xs font-mono text-gray-400">QUESTION:</span>
+                        <div id="math-question" class="text-3xl sm:text-4xl font-black text-white font-mono tracking-wider">
+                            12 + 15 = ?
+                        </div>
+                    </div>
+
+                    <div id="math-options" class="grid grid-cols-2 gap-3.5">
+                        <!-- Options generated via JS -->
+                    </div>
+
+                    <button onclick="nextMathQuestion()" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-wider uppercase transition-colors">
+                        ข้ามโจทย์นี้ <i class="fa-solid fa-rotate-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-3xl space-y-6 border-t-4 border-t-neonred relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-futbol text-neonred"></i>
+                                <span>ยิงจุดโทษ 2008 (Penalty Shootout)</span>
+                            </h3>
+                            <p class="text-xs text-gray-400">คลิกเลือกมุมยิงประตู พาทีมคว้าแชมป์!</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-gray-400 font-mono block">GOALS</span>
+                            <span id="penalty-score" class="text-2xl font-black font-mono text-neonred">0 / 0</span>
+                        </div>
+                    </div>
+
+                    <div id="goal-box" class="relative h-56 sm:h-64 rounded-2xl bg-gradient-to-b from-blue-900/40 to-green-950/60 border-4 border-white/30 overflow-hidden flex flex-col justify-between p-4 shadow-inner">
+                        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+                        <div id="goalkeeper" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl sm:text-5xl transition-all duration-300">
+                            🧤
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2 h-full z-10 relative">
+                            <button onclick="shootPenalty(0)" class="rounded-xl border border-white/20 bg-white/5 hover:bg-neonred/30 hover:border-neonred transition-all flex items-center justify-center text-xs font-mono text-gray-300 font-bold group">
+                                <span class="group-hover:scale-125 transition-transform">มุมซ้ายบน ↗</span>
+                            </button>
+                            <button onclick="shootPenalty(1)" class="rounded-xl border border-white/20 bg-white/5 hover:bg-neonred/30 hover:border-neonred transition-all flex items-center justify-center text-xs font-mono text-gray-300 font-bold group">
+                                <span class="group-hover:scale-125 transition-transform">ตรงกลางบน ⬆</span>
+                            </button>
+                            <button onclick="shootPenalty(2)" class="rounded-xl border border-white/20 bg-white/5 hover:bg-neonred/30 hover:border-neonred transition-all flex items-center justify-center text-xs font-mono text-gray-300 font-bold group">
+                                <span class="group-hover:scale-125 transition-transform">มุมขวาบน ↖</span>
+                            </button>
+                            <button onclick="shootPenalty(3)" class="rounded-xl border border-white/20 bg-white/5 hover:bg-neonred/30 hover:border-neonred transition-all flex items-center justify-center text-xs font-mono text-gray-300 font-bold group">
+                                <span class="group-hover:scale-125 transition-transform">มุมซ้ายล่าง ↘</span>
+                            </button>
+                            <button onclick="shootPenalty(4)" class="rounded-xl border border-white/20 bg-white/5 hover:bg-neonred/30 hover:border-neonred transition-all flex items-center justify-center text-xs font-mono text-gray-300 font-bold group">
+                                <span class="group-hover:scale-125 transition-transform">เลียดพื้นกลาง ⬇</span>
+                            </button>
+                            <button onclick="shootPenalty(5)" class="rounded-xl border border-white/20 bg-white/5 hover:bg-neonred/30 hover:border-neonred transition-all flex items-center justify-center text-xs font-mono text-gray-300 font-bold group">
+                                <span class="group-hover:scale-125 transition-transform">มุมขวาล่าง ↙</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="penalty-message" class="text-center font-bold text-sm text-gray-300 h-6">
+                        ⚽ เลือกมุมยิงเพื่อเริ่มดวลจุดโทษนัดชิงชนะเลิศ!
+                    </div>
+
+                    <button onclick="resetPenalty()" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-wider uppercase transition-colors">
+                        เริ่มยิงใหม่ <i class="fa-solid fa-rotate-right ml-1"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 6: CONTACT -->
+        <section id="section-contact" class="page-section hidden">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono text-neonred uppercase tracking-widest bg-neonred/10 px-3 py-1 rounded-full border border-neonred/20">
+                    <i class="fa-solid fa-paper-plane"></i> Get in Touch
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">ติดต่อ & ช่องทางออนไลน์</h2>
+                <p class="text-gray-400 text-sm">สามารถติดต่อพูดคุย สอบถามข้อมูล หรือทักทายพูดคุยเรื่องแมนยูได้ครับ!</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-neonred to-neongold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="glass-panel p-6 rounded-3xl text-center space-y-4 glass-panel-hover">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-solid fa-school-flag"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">ประถม</h4>
+                        <p class="text-xs text-gray-400 mt-1">โรงเรียนอนุบาลเชียงใหม่<br>(ศิษย์เก่า ป.1-ป.6)</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-3xl text-center space-y-4 glass-panel-hover">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-neonred/20 text-neonred flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">มัธยม</h4>
+                        <p class="text-xs text-gray-400 mt-1">โรงเรียนจอมทอง จ.เชียงใหม่<br>ห้อง ม.3/2</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-3xl text-center space-y-4 glass-panel-hover">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-cyan-400/20 text-cyan-400 flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">โซเชียลมีเดีย</h4>
+                        <p class="text-xs text-gray-400 mt-1">Chitipat Euro (M.3/2)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-cyberdark border-t border-white/10 py-8 text-center text-xs text-gray-500 font-mono mt-12 z-10">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <div class="flex items-center justify-center space-x-2 text-white font-bold">
+                <i class="fa-solid fa-shield-halved text-neonred"></i>
+                <span>CHITIPAT KONGJAN (EURO) • ANUBAN CHIANG MAI ALUM & M.3/2 JOMTHONG</span>
+            </div>
+            <p>© 2026 Cyber-Sports Student Portfolio • Manchester United 2008 Glory Spirit Edition.</p>
+        </div>
+    </footer>
+
+    <div id="player-modal" class="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-panel p-6 sm:p-8 rounded-3xl max-w-lg w-full space-y-5 border-2 border-neonred/50 relative shadow-2xl animate-in fade-in zoom-in duration-300">
+            <button onclick="closePlayerModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-neonred transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-4">
+                <div id="modal-badge-num" class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neonred to-neongold p-0.5 shadow-xl shrink-0">
+                    <div class="w-full h-full bg-cyberdark rounded-[14px] flex items-center justify-center font-black text-2xl text-neonred font-mono" id="modal-number">7</div>
+                </div>
+                <div>
+                    <h3 id="modal-name" class="text-2xl font-black text-white">Cristiano Ronaldo</h3>
+                    <p id="modal-role" class="text-neongold font-mono text-xs font-bold uppercase tracking-wider">Ballon d'Or Winner 2008</p>
+                </div>
+            </div>
+
+            <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed">
+                คริสเตียโน โรนัลโด ยุค 2008 ยิงไปถึง 42 ประตูในทุกรายการ พาทีมคว้าแชมป์พรีเมียร์ลีกและยูฟ่าแชมเปียนส์ลีกที่มอสโก ถือเป็นไอดอลแรงบันดาลใจหลักของยูโร
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 pt-2 text-center">
+                <div class="glass-panel p-3 rounded-2xl">
+                    <div class="text-[10px] text-gray-400 font-mono">SEASON STATS</div>
+                    <div id="modal-stat1" class="text-white font-bold text-sm mt-0.5">42 Goals (07/08)</div>
+                </div>
+                <div class="glass-panel p-3 rounded-2xl">
+                    <div class="text-[10px] text-gray-400 font-mono">TROPHY WON</div>
+                    <div id="modal-stat2" class="text-neongold font-bold text-sm mt-0.5">UCL & Premier League</div>
+                </div>
+            </div>
+
+            <button onclick="closePlayerModal()" class="w-full py-3 rounded-xl bg-neonred text-white font-bold text-xs uppercase tracking-wider hover:bg-red-700 transition-colors shadow-lg shadow-neonred/40">
+                ปิดหน้าต่าง
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let soundEnabled = true;
+        let mathScore = 0;
+        let penaltyScore = 0;
+        let penaltyAttempts = 0;
+        let currentMathAnswer = 0;
+
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playBeep(freq = 440, type = 'sine', duration = 0.15) {
+            if (!soundEnabled) return;
+            try {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {
+                console.log("Audio not allowed yet");
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const soundIcon = document.getElementById('sound-icon');
+            const soundIconMob = document.getElementById('sound-icon-mobile');
+            const soundText = document.getElementById('sound-text');
+            if (soundEnabled) {
+                soundIcon.className = "fa-solid fa-volume-high text-neonred";
+                soundIconMob.className = "fa-solid fa-volume-high text-neonred";
+                soundText.textContent = "AUDIO ON";
+                playBeep(587.33, 'triangle', 0.2);
+            } else {
+                soundIcon.className = "fa-solid fa-volume-xmark text-gray-500";
+                soundIconMob.className = "fa-solid fa-volume-xmark text-gray-500";
+                soundText.textContent = "AUDIO OFF";
+            }
+        }
+
+        function triggerCenterZoom() {
+            playBeep(880, 'sine', 0.4);
+            const introScreen = document.getElementById('intro-screen');
+            introScreen.classList.add('zoom-portal');
+            setTimeout(() => {
+                introScreen.style.display = 'none';
+                generateMathQuestion();
+            }, 900);
+        }
+
+        function showSection(sectionId) {
+            playBeep(523.25, 'sine', 0.1);
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+
+            const target = document.getElementById('section-' + sectionId);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            const activeNav = document.getElementById('nav-' + sectionId);
+            if (activeNav) activeNav.classList.add('active');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        for (let i = 0; i < 40; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2 + 1,
+                color: Math.random() > 0.5 ? '#FF2A3B' : '#FFC72C',
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: (Math.random() - 0.5) * 0.6
+            });
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = 0.35;
+                ctx.fill();
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        function generateMathQuestion() {
+            const ops = ['+', '-', '×'];
+            const op = ops[Math.floor(Math.random() * ops.length)];
+            let n1, n2;
+            if (op === '+') {
+                n1 = Math.floor(Math.random() * 50) + 10;
+                n2 = Math.floor(Math.random() * 50) + 10;
+                currentMathAnswer = n1 + n2;
+            } else if (op === '-') {
+                n1 = Math.floor(Math.random() * 60) + 20;
+                n2 = Math.floor(Math.random() * n1) + 1;
+                currentMathAnswer = n1 - n2;
+            } else {
+                n1 = Math.floor(Math.random() * 12) + 2;
+                n2 = Math.floor(Math.random() * 12) + 2;
+                currentMathAnswer = n1 * n2;
+            }
+
+            document.getElementById('math-question').textContent = `${n1} ${op} ${n2} = ?`;
+
+            let options = [currentMathAnswer];
+            while (options.length < 4) {
+                let wrong = currentMathAnswer + (Math.floor(Math.random() * 10) - 5);
+                if (wrong !== currentMathAnswer && !options.includes(wrong) && wrong >= 0) {
+                    options.push(wrong);
+                }
+            }
+            options.sort(() => Math.random() - 0.5);
+
+            const optionsContainer = document.getElementById('math-options');
+            optionsContainer.innerHTML = '';
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "py-4 rounded-2xl glass-panel text-white font-bold text-lg font-mono hover:border-neongold hover:bg-neongold/20 transition-all";
+                btn.textContent = opt;
+                btn.onclick = () => checkMathAnswer(opt);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkMathAnswer(selected) {
+            const banner = document.getElementById('math-feedback-banner');
+            if (selected === currentMathAnswer) {
+                playBeep(783.99, 'sine', 0.25);
+                mathScore += 10;
+                document.getElementById('math-score').textContent = mathScore;
+                banner.textContent = "🎉 ถูกต้องเก่งมาก! (+10 คะแนน)";
+                banner.className = "absolute inset-x-0 top-0 py-2.5 px-4 text-center font-bold text-sm tracking-wider shadow-lg transform translate-y-0 bg-emerald-600 text-white transition-transform duration-300 z-20 flex items-center justify-center gap-2";
+            } else {
+                playBeep(220, 'sawtooth', 0.3);
+                banner.textContent = `❌ ผิดครับ คำตอบที่ถูกคือ ${currentMathAnswer}`;
+                banner.className = "absolute inset-x-0 top-0 py-2.5 px-4 text-center font-bold text-sm tracking-wider shadow-lg transform translate-y-0 bg-neonred text-white transition-transform duration-300 z-20 flex items-center justify-center gap-2";
+            }
+            setTimeout(() => {
+                banner.className = "absolute inset-x-0 top-0 py-2.5 px-4 text-center font-bold text-sm tracking-wider shadow-lg transform -translate-y-full transition-transform duration-300 z-20 flex items-center justify-center gap-2";
+                generateMathQuestion();
+            }, 1200);
+        }
+
+        function nextMathQuestion() {
+            playBeep(440, 'sine', 0.1);
+            generateMathQuestion();
+        }
+
+        function shootPenalty(zoneIndex) {
+            penaltyAttempts++;
+            const gk = document.getElementById('goalkeeper');
+            const msg = document.getElementById('penalty-message');
+            
+            const gkDive = Math.floor(Math.random() * 6);
+
+            const positions = [
+                {top: '30%', left: '20%'},
+                {top: '25%', left: '50%'},
+                {top: '30%', left: '80%'},
+                {top: '70%', left: '20%'},
+                {top: '75%', left: '50%'},
+                {top: '70%', left: '80%'}
+            ];
+
+            gk.style.top = positions[gkDive].top;
+            gk.style.left = positions[gkDive].left;
+
+            if (zoneIndex !== gkDive) {
+                playBeep(880, 'sine', 0.3);
+                penaltyScore++;
+                msg.innerHTML = `⚽ <strong>GOAL!</strong> ซัดเข้าไปตุงตาข่ายอย่างสวยงาม! (สไตล์ CR7 2008)`;
+                msg.className = "text-center font-bold text-sm text-emerald-400 h-6";
+            } else {
+                playBeep(180, 'sawtooth', 0.4);
+                msg.innerHTML = `❌ <strong>SAVED!</strong> ผู้รักษาประตูพุ่งปัดไว้ได้ทัน!`;
+                msg.className = "text-center font-bold text-sm text-neonred h-6";
+            }
+
+            document.getElementById('penalty-score').textContent = `${penaltyScore} / ${penaltyAttempts}`;
+        }
+
+        function resetPenalty() {
+            playBeep(523.25, 'sine', 0.15);
+            penaltyScore = 0;
+            penaltyAttempts = 0;
+            document.getElementById('penalty-score').textContent = `0 / 0`;
+            const gk = document.getElementById('goalkeeper');
+            gk.style.top = '50%';
+            gk.style.left = '50%';
+            document.getElementById('penalty-message').textContent = "⚽ เลือกมุมยิงเพื่อเริ่มดวลจุดโทษนัดชิงชนะเลิศ!";
+            document.getElementById('penalty-message').className = "text-center font-bold text-sm text-gray-300 h-6";
+        }
+
+        function filterHobbies(category) {
+            playBeep(659.25, 'sine', 0.1);
+            const cards = document.querySelectorAll('.hobby-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const tabs = document.querySelectorAll('.hobby-tab');
+            tabs.forEach(t => t.classList.remove('active', 'bg-neonred', 'text-white'));
+            event.target.classList.add('active', 'bg-neonred', 'text-white');
+        }
+
+        const playersData = {
+            cr7: {
+                name: "Cristiano Ronaldo (CR7)",
+                role: "Ballon d'Or 2008 & UCL Champion",
+                number: "7",
+                desc: "คริสเตียโน โรนัลโด ยุค 2008 ยิงไปถึง 42 ประตูในทุกรายการ พาทีมคว้าแชมป์พรีเมียร์ลีกและยูฟ่าแชมเปียนส์ลีกที่มอสโก ถือเป็นแรงบันดาลใจหลักของยูโร ม.3/2",
+                stat1: "42 Goals (07/08)",
+                stat2: "UCL & Premier League"
+            },
+            rooney: {
+                name: "Wayne Rooney",
+                role: "Wazza Legendary Striker",
+                number: "10",
+                desc: "เวย์น รูนีย์ กองหน้าหัวใจสิงห์ วิ่งสู้ฟัดทุกจังหวะ เต็มเปี่ยมไปด้วยพลังและความดุดันในแนวรุกของแมนเชสเตอร์ ยูไนเต็ด",
+                stat1: "20+ Goals (07/08)",
+                stat2: "Workrate & Spirit"
+            },
+            scholes: {
+                name: "Paul Scholes",
+                role: "Midfield Maestro & Pass Master",
+                number: "18",
+                desc: "พอล สโคลส์ กองกลางจอมจ่ายบอลแม่นยำราวจับวางและลูกยิงไกลสุดสะใจ เช่น ลูกยิงใส่บาร์เซโลนาในรอบรองชนะเลิศ 2008",
+                stat1: "Masterclass Control",
+                stat2: "UCL Semi-final Hero"
+            },
+            wall: {
+                name: "Rio Ferdinand & Nemanja Vidić",
+                role: "Iron Wall Center Back Partnership",
+                number: "5&15",
+                desc: "คู่เซ็นเตอร์แบ็กที่แข็งแกร่งที่สุดในประวัติศาสตร์พรีเมียร์ลีก สถิติคลีนชีตติดต่อกันหลายนัดในฤดูกาล 2008",
+                stat1: "Clean Sheet Records",
+                stat2: "Impenetrable Wall"
+            },
+            vandersar: {
+                name: "Edwin van der Sar",
+                role: "Moscow Penalty Shootout Hero",
+                number: "1",
+                desc: "เอ็ดวิน ฟาน เดอร์ สาร์ เซฟลูกจุดโทษตัดสินของ Nicolas Anelka ในนัดชิงยูฟ่าแชมเปียนส์ลีก 2008 พาแมนยูคว้าแชมป์ยุโรปสมัยที่ 3",
+                stat1: "Penalty Shootout Save",
+                stat2: "UCL Champion 2008"
+            }
+        };
+
+        function showPlayerModal(key) {
+            playBeep(659.25, 'sine', 0.15);
+            const p = playersData[key];
+            if (!p) return;
+            document.getElementById('modal-name').textContent = p.name;
+            document.getElementById('modal-role').textContent = p.role;
+            document.getElementById('modal-number').textContent = p.number;
+            document.getElementById('modal-desc').textContent = p.desc;
+            document.getElementById('modal-stat1').textContent = p.stat1;
+            document.getElementById('modal-stat2').textContent = p.stat2;
+            document.getElementById('player-modal').classList.remove('hidden');
+        }
+
+        function closePlayerModal() {
+            playBeep(440, 'sine', 0.1);
+            document.getElementById('player-modal').classList.add('hidden');
+        }
+
+        function triggerConfetti() {
+            playBeep(880, 'sine', 0.3);
+            alert("🎉 ขอบคุณที่เยี่ยมชมพอร์ตโฟลิโอของยูโร ชิติพัทธ์ ศิษย์เก่าอนุบาลเชียงใหม่ & ม.3/2 จอมทองครับ! (Glory Glory Man Utd 😈)");
+        }
+
+        window.onload = function() {
+            // Initialization complete
+        };
+    </script>
+</body>
+</html>
