@@ -44,14 +44,6 @@
         ::-webkit-scrollbar-thumb { background: #1f293d; border-radius: 99px; }
         ::-webkit-scrollbar-thumb:hover { background: #FF2A3B; }
 
-        body, button, a, input, select, textarea {
-            cursor: url('517134882_10239389411497467_6031187934220395939_n_2.jpg') 16 16, auto !important;
-        }
-
-        button:hover, a:hover, [onclick] {
-            cursor: url('517134882_10239389411497467_6031187934220395939_n_2.jpg') 24 24, pointer !important;
-        }
-
         body {
             background-color: #080C14;
             color: #F1F5F9;
@@ -144,7 +136,6 @@
             z-index: 0;
         }
 
-        /* Center Zoom Opening Animation */
         #intro-screen {
             transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.9s ease-in-out;
             transform-origin: center center;
@@ -155,20 +146,13 @@
             opacity: 0;
             pointer-events: none;
         }
-
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-        .animate-float {
-            animation: floatSlow 4s ease-in-out infinite;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative selection:bg-neonred selection:text-white">
 
+    <!-- INTRO SCREEN -->
     <div id="intro-screen" class="fixed inset-0 z-[100] bg-cyberdark flex flex-col items-center justify-center p-4 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-40 scale-105 animate-pulse" style="animation-duration: 8s; background-image: url('Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe');"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 scale-105 animate-pulse" style="animation-duration: 8s;"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-cyberdark via-cyberdark/80 to-red-950/50 pointer-events-none"></div>
         <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#FF2A3B_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
 
@@ -205,9 +189,7 @@
 
     <canvas id="bg-canvas"></canvas>
 
-    <div class="fixed top-10 left-10 w-96 h-96 bg-neonred/15 rounded-full blur-[120px] pointer-events-none z-0"></div>
-    <div class="fixed bottom-10 right-10 w-96 h-96 bg-neongold/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
-
+    <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-cyberdark/80 border-b border-white/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -265,6 +247,7 @@
             </div>
         </div>
 
+        <!-- MOBILE MENU -->
         <div id="mobile-menu" class="hidden md:hidden bg-cyberdark/95 border-b border-white/10 px-4 pt-3 pb-5 space-y-2 text-sm font-medium transition-all">
             <a href="#home" onclick="showSection('home'); toggleMobileMenu()" class="block px-4 py-3 rounded-xl hover:bg-neonred/20 hover:text-white transition-all flex items-center gap-3">
                 <i class="fa-solid fa-house text-neonred"></i> <span>หน้าแรก</span>
@@ -287,12 +270,13 @@
         </div>
     </header>
 
+    <!-- MAIN CONTENT SECTIONS -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 z-10 flex-grow w-full">
 
         <!-- SECTION 1: HOME / HERO -->
         <section id="section-home" class="page-section">
             <div class="relative rounded-3xl overflow-hidden p-6 sm:p-10 mb-8 border border-white/15 shadow-2xl">
-                <div class="absolute inset-0 bg-cover bg-center opacity-30 filter brightness-90" style="background-image: url('Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe');"></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-30 filter brightness-90"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-cyberdark via-cyberdark/90 to-cyberdark/70"></div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10 py-4 lg:py-6">
@@ -366,7 +350,8 @@
                             <div class="avatar-glow"></div>
 
                             <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-2 bg-cyberdark border-2 border-white/25 shadow-2xl flex items-center justify-center overflow-hidden">
-                                <img src="758408997_1496012535545849_5696015498214128430_n.jpg" 
+                                <!-- แทนที่ลิงก์รูปภาพโปรไฟล์ของคุณตรง src ด้านล่างนี้ -->
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
                                      alt="รูปโปรไฟล์ ยูโร ชิติพัทธ์" 
                                      class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700">
                                 
@@ -404,7 +389,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl text-center space-y-6 relative overflow-hidden border-t-4 border-t-neonred">
                     <div class="relative w-44 h-44 mx-auto rounded-full p-1.5 border-2 border-neonred/50 shadow-2xl overflow-hidden group">
-                        <img src="758408997_1496012535545849_5696015498214128430_n.jpg" alt="ชิติพัทธ์" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="ชิติพัทธ์" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-500">
                     </div>
 
                     <div>
@@ -480,7 +465,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: EDUCATION (PRIMARY AT ANUBAN CHIANG MAI & JOMTHONG) -->
+        <!-- SECTION 3: EDUCATION -->
         <section id="section-education" class="page-section hidden">
             <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
                 <div class="inline-flex items-center gap-2 text-xs font-mono text-neongold uppercase tracking-widest bg-neongold/10 px-3 py-1 rounded-full border border-neongold/20">
@@ -513,7 +498,7 @@
                         </div>
                     </div>
 
-                    <!-- Primary School Grades 1-6 (Anuban Chiang Mai) -->
+                    <!-- Primary School Grades 1-6 -->
                     <div class="relative group">
                         <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-7 h-7 rounded-full bg-amber-500 border-4 border-cyberdark flex items-center justify-center text-black font-black text-xs shadow-lg">
                             <i class="fa-solid fa-star text-[10px]"></i>
@@ -532,7 +517,6 @@
                                 ผ่านช่วงวัยประถมศึกษาอันทรงคุณค่าที่โรงเรียนอนุบาลเชียงใหม่ ซึ่งเป็นรากฐานสำคัญในการปลูกฝังวินัย ความรักในการเรียนรู้ ทักษะวิชาการรอบด้าน และพื้นฐานคณิตศาสตร์ที่ดีเยี่ยมก่อนก้าวสู่ระดับมัธยมศึกษา
                             </p>
 
-                            <!-- Grade Details Breakdown Accordion/Grid -->
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
                                 <div class="glass-panel p-3 rounded-2xl text-center border-amber-400/30">
                                     <span class="text-amber-400 font-bold text-xs font-mono block">ประถมศึกษาปีที่ 1-2</span>
@@ -573,10 +557,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="hobby-card football glass-panel p-6 rounded-3xl glass-panel-hover border-t-2 border-t-neonred space-y-6 md:col-span-2 lg:col-span-3 relative overflow-hidden">
-                    <div class="absolute inset-0 z-0 opacity-15 pointer-events-none bg-cover bg-center" style="background-image: url('Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe');"></div>
+                    <div class="absolute inset-0 z-0 opacity-15 pointer-events-none bg-cover bg-center"></div>
 
                     <div class="relative overflow-hidden rounded-2xl border border-neonred/30 group z-10">
-                        <img src="Gemini_Generated_Image_a2sji7a2sji7a2sj.jpe" 
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80" 
                              alt="Manchester United Legends 2008" 
                              class="w-full h-64 sm:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-cyberdark via-cyberdark/30 to-transparent flex items-end p-4 sm:p-6">
@@ -827,6 +811,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-cyberdark border-t border-white/10 py-8 text-center text-xs text-gray-500 font-mono mt-12 z-10">
         <div class="max-w-7xl mx-auto px-4 space-y-3">
             <div class="flex items-center justify-center space-x-2 text-white font-bold">
@@ -837,8 +822,9 @@
         </div>
     </footer>
 
+    <!-- PLAYER MODAL -->
     <div id="player-modal" class="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel p-6 sm:p-8 rounded-3xl max-w-lg w-full space-y-5 border-2 border-neonred/50 relative shadow-2xl animate-in fade-in zoom-in duration-300">
+        <div class="glass-panel p-6 sm:p-8 rounded-3xl max-w-lg w-full space-y-5 border-2 border-neonred/50 relative shadow-2xl">
             <button onclick="closePlayerModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-neonred transition-colors">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -874,6 +860,7 @@
         </div>
     </div>
 
+    <!-- JAVASCRIPT SCRIPT -->
     <script>
         let soundEnabled = true;
         let mathScore = 0;
@@ -1182,10 +1169,6 @@
             playBeep(880, 'sine', 0.3);
             alert("🎉 ขอบคุณที่เยี่ยมชมพอร์ตโฟลิโอของยูโร ชิติพัทธ์ ศิษย์เก่าอนุบาลเชียงใหม่ & ม.3/2 จอมทองครับ! (Glory Glory Man Utd 😈)");
         }
-
-        window.onload = function() {
-            // Initialization complete
-        };
     </script>
 </body>
 </html>
